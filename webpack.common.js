@@ -14,13 +14,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|gif|svg)$/,
-                use: {
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name][hash].[ext]',
-                        outputPath: 'img',
-                    },
-                },
+                type: 'asset/resource',
             },
             {
                 test: /\.(?:js|mjs|cjs)$/,

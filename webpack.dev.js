@@ -8,6 +8,7 @@ module.exports = merge.default(commonConfig, {
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
+        assetModuleFilename: 'img/[name][hash][ext]',
         clean: true,
     },
 });
