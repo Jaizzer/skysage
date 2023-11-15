@@ -12,7 +12,6 @@
         "ecmaVersion": "latest"
     },
     // Only apply eslint rules to src directory.
-    "ignorePatterns": ["**/*", "!./src**"],
     "rules": {
     }
 }
