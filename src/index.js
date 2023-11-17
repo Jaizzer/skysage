@@ -12,5 +12,5 @@ form.addEventListener('submit', (event) => {
     const location = search.value;
 
     // Get Weather data.
-    const weatherData = getWeatherData(location);
+    const tenDayForecast = getWeatherData(location);
 });
