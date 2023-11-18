@@ -10,10 +10,10 @@ import Weather from './Weather';
  */
 export default function processWeatherData(weatherData) {
     // Destructure relevant data from the weatherData object.
-    const { forecastLocation, tenDayForecast } = weatherData;
+    const { forecastLocation, nDayForecast } = weatherData;
 
     // Map over each day in the ten-day forecast.
-    const daywiseHourlyForecasts = tenDayForecast.map((day) => {
+    const daywiseHourlyForecasts = nDayForecast.map((day) => {
         // Map over each hour in a day and create a new Weather object for each hour.
         return day.hour.map((hour) => {
             return new Weather(
