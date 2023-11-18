@@ -18,10 +18,10 @@ export default function processWeatherData(weatherData) {
         return day.hour.map((hour) => {
             return new Weather(
                 forecastLocation.name,
-                day.day.maxtemp_c,
-                day.day.mintemp_c,
+                { celsius: day.day.maxtemp_c, fahrenheit: day.day.maxtemp_f },
+                { celsius: day.day.mintemp_c, fahrenheit: day.day.mintemp_f },
                 day.day.condition.text,
-                hour.temp_c,
+                { celsius: hour.temp_c, fahrenheit: hour.temp_f },
                 hour.condition.text,
                 hour.uv,
                 day.astro.sunset,
@@ -32,7 +32,7 @@ export default function processWeatherData(weatherData) {
                 hour.humidity,
                 hour.vis_km,
                 hour.pressure_mb,
-                day.day.avgtemp_c
+                { celsius: day.day.avgtemp_c, fahrenheit: day.day.avgtemp_f }
             );
         });
     });
