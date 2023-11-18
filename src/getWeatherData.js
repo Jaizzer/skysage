@@ -5,9 +5,9 @@ export default async function getWeatherData(location) {
             mode: 'cors',
         });
         const json = await response.json();
-        const tenDayForecast = json.forecast.forecastday;
-        console.log(tenDayForecast);
-        return tenDayForecast;
+        const extractedInfo = { forecastLocation: json.location, tenDayForecast: json.forecast.forecastday };
+        console.log(extractedInfo);
+        return extractedInfo;
     } catch (error) {
         console.log(error);
         return null;
