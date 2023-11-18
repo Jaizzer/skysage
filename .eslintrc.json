@@ -13,5 +13,6 @@
     },
     // Only apply eslint rules to src directory.
     "rules": {
+        "arrow-body-style": ["error", "always"]
     }
 }
