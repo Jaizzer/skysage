@@ -1,9 +1,13 @@
 import './style.css';
 import getWeatherData from './getWeatherData';
+import processWeatherData from './processWeatherData';
 
 async function loadWeatherStatus(location) {
     // Get Weather data.
     const weatherData = await getWeatherData(location);
+
+    // Process the weather data and extract day-wise hourly forecasts.
+    const daywiseHourlyForecasts = processWeatherData(weatherData);
 }
 
 // Get Weather data when the user searched for a location.
