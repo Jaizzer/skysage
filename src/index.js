@@ -10,15 +10,18 @@ async function loadWeatherStatus(location) {
     const daywiseHourlyForecasts = processWeatherData(weatherData);
 }
 
+// Set the location to 'London' by default.
+let location = 'London';
+
 // Get Weather data when the user searched for a location.
 const form = document.querySelector('form');
 form.addEventListener('submit', (event) => {
     // Prevent form submission.
     event.preventDefault();
 
-    // Get the location.
+    // Get the new location from the search bar.s
     const search = form.querySelector('#search-location');
-    const location = search.value;
+    location = search.value;
 
     loadWeatherStatus(location);
 });
