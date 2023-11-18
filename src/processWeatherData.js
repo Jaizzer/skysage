@@ -8,7 +8,7 @@ import Weather from './Weather';
  * @returns {Array} An array containing day-wise hourly forecasts represented by Weather objects.
  * @throws Will throw an error if the structure of the WeatherAPI response is not as expected.
  */
-export default function processWeatherData(weatherData) {
+export default function processWeatherData(weatherData, tempUnit) {
     // Destructure relevant data from the weatherData object.
     const { forecastLocation, nDayForecast } = weatherData;
 
@@ -18,21 +18,21 @@ export default function processWeatherData(weatherData) {
         return day.hour.map((hour) => {
             return new Weather(
                 forecastLocation.name,
-                { celsius: day.day.maxtemp_c, fahrenheit: day.day.maxtemp_f },
-                { celsius: day.day.mintemp_c, fahrenheit: day.day.mintemp_f },
+                day.day[`maxtemp_${tempUnit}`],
+                day.day[`mintemp_${tempUnit}`],
                 day.day.condition.text,
-                { celsius: hour.temp_c, fahrenheit: hour.temp_f },
+                hour[`temp_${tempUnit}`],
                 hour.condition.text,
                 hour.uv,
                 day.astro.sunset,
                 day.astro.sunrise,
                 hour.wind_mph,
                 hour.precip_mm,
-                hour.feelslike_c,
+                hour[`feelslike_${tempUnit}`],
                 hour.humidity,
                 hour.vis_km,
                 hour.pressure_mb,
-                { celsius: day.day.avgtemp_c, fahrenheit: day.day.avgtemp_f }
+                day.day[`avgtemp_${tempUnit}`]
             );
         });
     });
