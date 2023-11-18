@@ -18,21 +18,21 @@ export default function processWeatherData(weatherData, tempUnit) {
         return day.hour.map((hour) => {
             return new Weather(
                 forecastLocation.name,
-                day.day[`maxtemp_${tempUnit}`],
-                day.day[`mintemp_${tempUnit}`],
+                day.day[`maxtemp_${tempUnit.toLowerCase()}`],
+                day.day[`mintemp_${tempUnit.toLowerCase()}`],
                 day.day.condition.text,
-                hour[`temp_${tempUnit}`],
+                hour[`temp_${tempUnit.toLowerCase()}`],
                 hour.condition.text,
                 hour.uv,
                 day.astro.sunset,
                 day.astro.sunrise,
                 hour.wind_mph,
                 hour.precip_mm,
-                hour[`feelslike_${tempUnit}`],
+                hour[`feelslike_${tempUnit.toLowerCase()}`],
                 hour.humidity,
                 hour.vis_km,
                 hour.pressure_mb,
-                day.day[`avgtemp_${tempUnit}`]
+                day.day[`avgtemp_${tempUnit.toLowerCase()}`]
             );
         });
     });
