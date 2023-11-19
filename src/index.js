@@ -1,6 +1,7 @@
 import './style.css';
 import getWeatherData from './getWeatherData';
 import processWeatherData from './processWeatherData';
+import buildNdayForecastDashBoard from './buildNdayForecastDashboard';
 
 // Current temperature units.
 let unit = 'c';
@@ -11,6 +12,9 @@ async function loadWeatherStatus(location, tempUnit) {
 
     // Process the weather data and extract day-wise hourly forecasts.
     const daywiseHourlyForecasts = processWeatherData(weatherData, tempUnit);
+
+    // Build the n-day-forecast dashboard
+    buildNdayForecastDashBoard(daywiseHourlyForecasts);
 }
 
 // Set the location to 'London' by default.
