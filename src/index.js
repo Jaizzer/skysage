@@ -19,6 +19,7 @@ async function loadWeatherStatus(location, tempUnit) {
 
 // Set the location to 'London' by default.
 let location = 'London';
+loadWeatherStatus(location, unit);
 
 // Get Weather data when the user searched for a location.
 const form = document.querySelector('form');
