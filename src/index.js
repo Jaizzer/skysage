@@ -2,12 +2,15 @@ import './style.css';
 import getWeatherData from './getWeatherData';
 import processWeatherData from './processWeatherData';
 
-async function loadWeatherStatus(location) {
+// Current temperature units.
+let unit = 'c';
+
+async function loadWeatherStatus(location, tempUnit) {
     // Get Weather data.
     const weatherData = await getWeatherData(location);
 
     // Process the weather data and extract day-wise hourly forecasts.
-    const daywiseHourlyForecasts = processWeatherData(weatherData);
+    const daywiseHourlyForecasts = processWeatherData(weatherData, tempUnit);
 }
 
 // Set the location to 'London' by default.
@@ -23,5 +26,5 @@ form.addEventListener('submit', (event) => {
     const search = form.querySelector('#search-location');
     location = search.value;
 
-    loadWeatherStatus(location);
+    loadWeatherStatus(location, unit);
 });
