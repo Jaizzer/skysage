@@ -25,6 +25,7 @@ export default class Weather {
         highTemperature,
         lowTemperature,
         generalWeatherStatus,
+        generalWeatherIcon,
         currentTemperature,
         currentHourWeatherStatus,
         currentHourWeatherIcon,
@@ -43,6 +44,7 @@ export default class Weather {
         this.highTemperature = highTemperature;
         this.lowTemperature = lowTemperature;
         this.generalWeatherStatus = generalWeatherStatus;
+        this.generalWeatherIcon = generalWeatherIcon;
         this.currentTemperature = currentTemperature;
         this.currentHourWeatherStatus = currentHourWeatherStatus;
         this.currentHourWeatherIcon = currentHourWeatherIcon;

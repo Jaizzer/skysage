@@ -22,6 +22,7 @@ export default function processWeatherData(weatherData, tempUnit) {
                 day.day[`maxtemp_${tempUnit}`],
                 day.day[`mintemp_${tempUnit}`],
                 day.day.condition.text,
+                day.day.condition.icon,
                 hour[`temp_${tempUnit}`],
                 hour.condition.text,
                 hour.condition.icon,
