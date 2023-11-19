@@ -27,6 +27,7 @@ export default class Weather {
         generalWeatherStatus,
         currentTemperature,
         currentHourWeatherStatus,
+        currentHourWeatherIcon,
         uvIndex,
         sunset,
         sunrise,
@@ -44,6 +45,7 @@ export default class Weather {
         this.generalWeatherStatus = generalWeatherStatus;
         this.currentTemperature = currentTemperature;
         this.currentHourWeatherStatus = currentHourWeatherStatus;
+        this.currentHourWeatherIcon = currentHourWeatherIcon;
         this.uvIndex = uvIndex;
         this.sunset = sunset;
         this.sunrise = sunrise;
