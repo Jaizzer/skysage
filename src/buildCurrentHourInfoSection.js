@@ -20,6 +20,9 @@ export default function buildCurrentHourInfoSection(daywiseHourlyForecasts) {
     // Access the existing '.current-hour-info-container' in the DOM.
     const currentHourInfoContainer = document.querySelector('.current-hour-info-container');
 
+    // Clear previous contents.
+    currentHourInfoContainer.innerHTML = '';
+
     // Create and append the location element.
     const locationElement = document.createElement('div');
     locationElement.classList.add('location');
