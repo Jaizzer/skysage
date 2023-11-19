@@ -22,6 +22,7 @@
 export default class Weather {
     constructor(
         location,
+        date,
         highTemperature,
         lowTemperature,
         generalWeatherStatus,
@@ -41,6 +42,7 @@ export default class Weather {
         averages
     ) {
         this.location = location;
+        this.date = date;
         this.highTemperature = highTemperature;
         this.lowTemperature = lowTemperature;
         this.generalWeatherStatus = generalWeatherStatus;

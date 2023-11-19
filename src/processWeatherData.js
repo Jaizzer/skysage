@@ -19,6 +19,7 @@ export default function processWeatherData(weatherData, tempUnit) {
         return day.hour.map((hour) => {
             return new Weather(
                 forecastLocation.name,
+                day.date,
                 day.day[`maxtemp_${tempUnit}`],
                 day.day[`mintemp_${tempUnit}`],
                 day.day.condition.text,
