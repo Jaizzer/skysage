@@ -2,6 +2,7 @@ import './style.css';
 import getWeatherData from './getWeatherData';
 import processWeatherData from './processWeatherData';
 import buildNdayForecastDashBoard from './buildNdayForecastDashboard';
+import buildCurrentHourInfoSection from './buildCurrentHourInfoSection';
 
 // Current temperature units.
 let unit = 'c';
@@ -15,6 +16,9 @@ async function loadWeatherStatus(location, tempUnit) {
 
     // Build the n-day-forecast dashboard
     buildNdayForecastDashBoard(daywiseHourlyForecasts);
+
+    // Build the current hour info secton
+    buildCurrentHourInfoSection(daywiseHourlyForecasts);
 }
 
 // Set the location to 'London' by default.
