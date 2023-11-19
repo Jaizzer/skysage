@@ -8,6 +8,9 @@ import buildCurrentHourInfoSection from './buildCurrentHourInfoSection';
 let unit = 'c';
 
 async function loadWeatherStatus(location, tempUnit) {
+    // Clear the console.
+    console.clear();
+
     // Get Weather data.
     const weatherData = await getWeatherData(location);
 
