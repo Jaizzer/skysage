@@ -24,6 +24,7 @@ export default function processWeatherData(weatherData, tempUnit) {
                 day.day.condition.text,
                 hour[`temp_${tempUnit}`],
                 hour.condition.text,
+                hour.condition.icon,
                 hour.uv,
                 day.astro.sunset,
                 day.astro.sunrise,
