@@ -6,27 +6,53 @@ import getCurrentHourWeatherStatus from './getCurrentHourWeatherStatus';
  *
  * @param {Array} daywiseHourlyForecasts - An array containing day-wise hourly forecasts represented by Weather objects.
  * @throws Will throw an error if the structure of the day-wise hourly forecasts is not as expected.
+ *
+ * This function dynamically creates HTML elements to display the current hour's weather information.
+ * It uses the getCurrentHourWeatherStatus function to retrieve the weather status for the current hour.
+ * The created elements include location, weather icon, main temperature, weather description, high temperature, and low temperature.
+ * These elements are appended to the existing '.current-hour-info-container' in the DOM.
+ *
  */
 export default function buildCurrentHourInfoSection(daywiseHourlyForecasts) {
     // Get the current hour weather status using the getCurrentHourWeatherStatus function.
     const currentHourWeatherStatus = getCurrentHourWeatherStatus(daywiseHourlyForecasts);
 
-    // Get the container element for the current hour info section.
+    // Access the existing '.current-hour-info-container' in the DOM.
     const currentHourInfoContainer = document.querySelector('.current-hour-info-container');
 
-    // Get individual elements within the container.
-    const locationElement = currentHourInfoContainer.querySelector('.location');
-    const weatherIconElement = currentHourInfoContainer.querySelector('.weather-icon');
-    const mainTemperatureElement = currentHourInfoContainer.querySelector('.main-temperature');
-    const weatherDescriptionElement = currentHourInfoContainer.querySelector('.weather-description');
-    const highTemperatureElement = currentHourInfoContainer.querySelector('.high');
-    const lowTemperatureElement = currentHourInfoContainer.querySelector('.low');
-
-    // Populate elements with the data from the current hour weather status.
+    // Create and append the location element.
+    const locationElement = document.createElement('div');
+    locationElement.classList.add('location');
     locationElement.textContent = currentHourWeatherStatus.location;
+    currentHourInfoContainer.appendChild(locationElement);
+
+    // Create and append the weather icon element.
+    const weatherIconElement = document.createElement('img');
+    weatherIconElement.classList.add('weather-icon');
     weatherIconElement.src = currentHourWeatherStatus.currentHourWeatherIcon;
+    currentHourInfoContainer.appendChild(weatherIconElement);
+
+    // Create and append the main temperature element.
+    const mainTemperatureElement = document.createElement('div');
+    mainTemperatureElement.classList.add('main-temperature');
     mainTemperatureElement.textContent = `${currentHourWeatherStatus.currentTemperature}°`;
+    currentHourInfoContainer.appendChild(mainTemperatureElement);
+
+    // Create and append the weather description element.
+    const weatherDescriptionElement = document.createElement('div');
+    weatherDescriptionElement.classList.add('weather-description');
     weatherDescriptionElement.textContent = currentHourWeatherStatus.currentHourWeatherStatus;
+    currentHourInfoContainer.appendChild(weatherDescriptionElement);
+
+    // Create and append the high temperature element.
+    const highTemperatureElement = document.createElement('div');
+    highTemperatureElement.classList.add('high');
     highTemperatureElement.textContent = currentHourWeatherStatus.highTemperature;
+    currentHourInfoContainer.appendChild(highTemperatureElement);
+
+    // Create and append the low temperature element.
+    const lowTemperatureElement = document.createElement('div');
+    lowTemperatureElement.classList.add('low');
     lowTemperatureElement.textContent = currentHourWeatherStatus.lowTemperature;
+    currentHourInfoContainer.appendChild(lowTemperatureElement);
 }
