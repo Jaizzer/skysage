@@ -1,42 +1,30 @@
 /**
- * Returns the day name for a given date string.
+ * Get the day name based on the provided forecast date and current date.
  *
- * If the given date is today, it returns 'Today'. Otherwise, it returns the full weekday name.
- *
- * @param {string} dateString - The date string in the format 'YYYY-MM-DD'.
- * @returns {string} The day name corresponding to the given date.
+ * @param {Object} dateObject - An object containing forecastDate and date properties.
+ * @returns {string} The day name.
  */
-export default function getDayName(dateString) {
+export default function getDayName(dateObject) {
     let dayName = '';
 
-    // Check if the given date is today
-    if (isDateToday(dateString)) {
+    // Create a Date object for the forecast date
+    const forecastDate = new Date(dateObject.forecastDate);
+
+    // Create a Date object for the current date
+    const currentDate = new Date(dateObject.currentDate);
+
+    // Compare year, month, and day of the forecast date and current date
+    const isSameDate =
+        forecastDate.getFullYear() === currentDate.getFullYear() &&
+        forecastDate.getMonth() === currentDate.getMonth() &&
+        forecastDate.getDate() === currentDate.getDate();
+
+    if (isSameDate) {
         dayName = 'Today';
     } else {
-        // If not today, get the full weekday name
-        dayName = new Date(dateString).toLocaleString('en-us', { weekday: 'long' });
+        // Get the day name from the forecast date
+        dayName = currentDate.toLocaleString('en-us', { weekday: 'long' });
     }
 
     return dayName;
-}
-
-/**
- * Checks if the given date string corresponds to the current date.
- *
- * @param {string} dateString - The date string in the format 'YYYY-MM-DD'.
- * @returns {boolean} True if the given date is today; otherwise, false.
- */
-function isDateToday(dateString) {
-    // Create a Date object for the given date string
-    const givenDate = new Date(dateString);
-
-    // Get the current date
-    const currentDate = new Date();
-
-    // Compare year, month, and day
-    return (
-        givenDate.getFullYear() === currentDate.getFullYear() &&
-        givenDate.getMonth() === currentDate.getMonth() &&
-        givenDate.getDate() === currentDate.getDate()
-    );
 }
