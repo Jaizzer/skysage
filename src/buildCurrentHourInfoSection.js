@@ -50,12 +50,12 @@ export default function buildCurrentHourInfoSection(daywiseHourlyForecasts) {
     // Create and append the high temperature element.
     const highTemperatureElement = document.createElement('div');
     highTemperatureElement.classList.add('high');
-    highTemperatureElement.textContent = currentHourWeatherStatus.highTemperature;
+    highTemperatureElement.textContent = `${currentHourWeatherStatus.highTemperature}°`;
     currentHourInfoContainer.appendChild(highTemperatureElement);
 
     // Create and append the low temperature element.
     const lowTemperatureElement = document.createElement('div');
     lowTemperatureElement.classList.add('low');
-    lowTemperatureElement.textContent = currentHourWeatherStatus.lowTemperature;
+    lowTemperatureElement.textContent = `${currentHourWeatherStatus.lowTemperature}°`;
     currentHourInfoContainer.appendChild(lowTemperatureElement);
 }
