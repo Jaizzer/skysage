@@ -28,3 +28,15 @@ form.addEventListener('submit', (event) => {
 
     loadWeatherStatus(location, unit);
 });
+
+// Use switch element to in DOM to switch units from celsisus to fahrenheit vice-versa.
+const unitConverterCheckbox = document.querySelector('#unit-converter');
+unitConverterCheckbox.addEventListener('change', () => {
+    if (unitConverterCheckbox.checked) {
+        unit = 'f';
+        loadWeatherStatus(location, unit);
+    } else {
+        unit = 'c';
+        loadWeatherStatus(location, unit);
+    }
+});
