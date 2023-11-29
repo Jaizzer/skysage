@@ -30,7 +30,7 @@ export default function processWeatherData(weatherData, tempUnit) {
                 hour.uv,
                 day.astro.sunset,
                 day.astro.sunrise,
-                hour.wind_mph,
+                { windSpeed: hour.wind_kph, windDirection: hour.wind_dir, windAngle: hour.wind_degree },
                 hour.precip_mm,
                 hour[`feelslike_${tempUnit}`],
                 hour.humidity,
