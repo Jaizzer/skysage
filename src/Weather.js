@@ -33,6 +33,8 @@ export default class Weather {
         uvIndex,
         sunset,
         sunrise,
+        moonPhase,
+        moonRise,
         wind,
         precipitation,
         feelsLike,
@@ -53,6 +55,8 @@ export default class Weather {
         this.uvIndex = uvIndex;
         this.sunset = sunset;
         this.sunrise = sunrise;
+        this.moonPhase = moonPhase;
+        this.moonRise = moonRise;
         this.wind = wind;
         this.precipitation = precipitation;
         this.feelsLike = feelsLike;

@@ -30,6 +30,8 @@ export default function processWeatherData(weatherData, tempUnit) {
                 hour.uv,
                 day.astro.sunset,
                 day.astro.sunrise,
+                day.astro.moon_phase,
+                day.astro.moonrise,
                 { windSpeed: hour.wind_kph, windDirection: hour.wind_dir, windAngle: hour.wind_degree },
                 hour.precip_mm,
                 hour[`feelslike_${tempUnit}`],
