@@ -3,6 +3,8 @@ import getWeatherData from './getWeatherData';
 import processWeatherData from './processWeatherData';
 import buildNdayForecastDashBoard from './buildNdayForecastDashboard';
 import buildCurrentHourInfoSection from './buildCurrentHourInfoSection';
+import getCurrentHourWeatherStatus from './getCurrentHourWeatherStatus';
+import buildTodaysHighlights from './buildTodaysHighlights';
 
 // Current temperature units.
 let unit = 'c';
@@ -22,6 +24,12 @@ async function loadWeatherStatus(location, tempUnit) {
 
     // Build the current hour info secton
     buildCurrentHourInfoSection(daywiseHourlyForecasts);
+
+    // Get current hour weather data.
+    const currentHourWeatherStatus = getCurrentHourWeatherStatus(daywiseHourlyForecasts);
+
+    // Build the today's highlights section.
+    buildTodaysHighlights(currentHourWeatherStatus);
 }
 
 // Set the location to 'London' by default.
