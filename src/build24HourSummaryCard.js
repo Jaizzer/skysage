@@ -8,13 +8,13 @@ export default function build24HourSummaryCard(daywiseHourlyForecasts) {
     // Get the 24-hour summary starting from the current hour.
     const twentyFourHourSummary = get24HourSummary(daywiseHourlyForecasts);
 
-    twentyFourHourSummary.forEach((hour) => {
+    twentyFourHourSummary.forEach((selectedHourInfo) => {
         // Create the container for the specific hour.
         const hourContainer = document.createElement('div');
         hourContainer.classList.add('hour-container');
 
         // Extract the hours and remove '0' pad.
-        const selectedhour = parseInt(hour.date.time.slice(0, 2), 10);
+        const selectedhour = parseInt(selectedHourInfo.date.time.slice(0, 2), 10);
 
         // Create the container to hold the time.
         const time = document.createElement('div');
@@ -31,13 +31,13 @@ export default function build24HourSummaryCard(daywiseHourlyForecasts) {
         // Add the icon for the current weather status for the current hour.
         const icon = document.createElement('img');
         icon.classList.add('weather-icon');
-        icon.src = hour.currentHourWeatherIcon;
+        icon.src = selectedHourInfo.currentHourWeatherIcon;
         hourContainer.appendChild(icon);
 
         // Add the current temperature for the current hour.
         const temperature = document.createElement('div');
         temperature.classList.add('temperature');
-        temperature.textContent = `${hour.currentTemperature}°`;
+        temperature.textContent = `${selectedHourInfo.currentTemperature}°`;
         hourContainer.appendChild(temperature);
 
         hourlyForecastContainer.appendChild(hourContainer);
