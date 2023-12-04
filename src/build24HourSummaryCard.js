@@ -25,3 +25,9 @@ function get24HourSummary(daywiseHourlyForecasts) {
 
     return twentyFourHourSummary;
 }
+
+function convertTo12HourFormat(hour) {
+    const hours12 = hour % 12 || 12;
+    const amPm = hour < 12 ? 'AM' : 'PM';
+    return `${hours12} ${amPm}`;
+}
