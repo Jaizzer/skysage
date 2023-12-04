@@ -10,3 +10,9 @@ body {
     height: 100vh;
     padding: 30px;
 }
+
+.current-hour-info-container {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+}
