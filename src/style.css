@@ -48,3 +48,13 @@ body {
 .main-temperature {
     font-size: 40px;
 }
+
+.hourly-forecast-container {
+    padding: 10px;
+
+    display: grid;
+    grid-auto-flow: column;
+    
+    width: 100%;
+    overflow: auto;
+}
