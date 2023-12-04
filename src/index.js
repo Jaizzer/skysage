@@ -5,6 +5,7 @@ import buildNdayForecastDashBoard from './buildNdayForecastDashboard';
 import buildCurrentHourInfoSection from './buildCurrentHourInfoSection';
 import getCurrentHourWeatherStatus from './getCurrentHourWeatherStatus';
 import buildTodaysHighlights from './buildTodaysHighlights';
+import build24HourSummaryCard from './build24HourSummaryCard';
 
 // Current temperature units.
 let unit = 'c';
@@ -30,6 +31,9 @@ async function loadWeatherStatus(location, tempUnit) {
 
     // Build the today's highlights section.
     buildTodaysHighlights(currentHourWeatherStatus);
+
+    // BUild 24 hour summary card.
+    build24HourSummaryCard(daywiseHourlyForecasts);
 }
 
 // Set the location to 'London' by default.
