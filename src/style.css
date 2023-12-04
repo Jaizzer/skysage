@@ -57,6 +57,8 @@ body {
     
     width: 100%;
     overflow: auto;
+
+    gap: 10px;
 }
 
 .hour-container {
