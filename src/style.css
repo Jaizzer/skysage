@@ -67,3 +67,7 @@ body {
     justify-items: center;
     align-items: center;
 }
+
+.hour-container .weather-icon {
+    scale: 0.75;
+}
