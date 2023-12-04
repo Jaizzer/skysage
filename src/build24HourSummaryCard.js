@@ -27,6 +27,12 @@ export default function build24HourSummaryCard(daywiseHourlyForecasts) {
             time.textContent = convertTo12HourFormat(selectedhour);
         }
         hourContainer.appendChild(time);
+
+        // Add the icon for the current weather status for the current hour.
+        const icon = document.createElement('img');
+        icon.classList.add('weather-icon');
+        icon.src = hour.currentHourWeatherIcon;
+        hourContainer.appendChild(icon);
     });
 }
 
