@@ -33,6 +33,12 @@ export default function build24HourSummaryCard(daywiseHourlyForecasts) {
         icon.classList.add('weather-icon');
         icon.src = hour.currentHourWeatherIcon;
         hourContainer.appendChild(icon);
+
+        // Add the current temperature for the current hour.
+        const temperature = document.createElement('div');
+        temperature.classList.add('temperature');
+        temperature.textContent = `${hour.currentTemperature}°`;
+        hourContainer.appendChild(temperature);
     });
 }
 
