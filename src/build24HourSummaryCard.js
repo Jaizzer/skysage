@@ -1,6 +1,10 @@
 import getCurrentHour from './getCurrentHour';
 
-export default function build24HourSummaryCard(daywiseHourlyForecasts) {}
+export default function build24HourSummaryCard(daywiseHourlyForecasts) {
+    // Access the hourly forecast container.
+    const hourlyForecastContainer = document.querySelector('.hourly-forecast-container');
+    hourlyForecastContainer.innerHTML = '';
+}
 
 function get24HourSummary(daywiseHourlyForecasts) {
     const currentHour = getCurrentHour();
