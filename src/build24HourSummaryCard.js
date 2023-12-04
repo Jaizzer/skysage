@@ -7,6 +7,12 @@ export default function build24HourSummaryCard(daywiseHourlyForecasts) {
 
     // Get the 24-hour summary starting from the current hour.
     const twentyFourHourSummary = get24HourSummary(daywiseHourlyForecasts);
+
+    twentyFourHourSummary.forEach((hour) => {
+        // Create the container for the specific hour.
+        const hourContainer = document.createElement('div');
+        hourContainer.classList.add('hour-container');
+    });
 }
 
 function get24HourSummary(daywiseHourlyForecasts) {
