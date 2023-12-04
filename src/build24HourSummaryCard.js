@@ -12,6 +12,21 @@ export default function build24HourSummaryCard(daywiseHourlyForecasts) {
         // Create the container for the specific hour.
         const hourContainer = document.createElement('div');
         hourContainer.classList.add('hour-container');
+
+        // Extract the hours and remove '0' pad.
+        const selectedhour = parseInt(hour.date.time.slice(0, 2), 10);
+
+        // Create the container to hold the time.
+        const time = document.createElement('div');
+        time.classList.add('time');
+
+        // Fill the 'time-container' with values, starting from current-hour 'Now'.
+        if (selectedhour === getCurrentHour()) {
+            time.textContent = 'Now';
+        } else {
+            time.textContent = convertTo12HourFormat(selectedhour);
+        }
+        hourContainer.appendChild(time);
     });
 }
 
