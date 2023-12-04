@@ -26,10 +26,10 @@ body {
     gap: 10px;
 }
 
-.location,
-.weather-icon,
-.main-temperature,
-.weather-description {
+.current-hour-info-container .location,
+.current-hour-info-container .weather-icon,
+.current-hour-info-container .main-temperature,
+.current-hour-info-container .weather-description {
     grid-column: 1 / 3;
 }
 
