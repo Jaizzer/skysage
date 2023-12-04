@@ -12,7 +12,7 @@ export default function buildHumidityStatusCard(humidity) {
     // Create the div for the humidity value
     const valueDiv = document.createElement('div');
     valueDiv.classList.add('value');
-    valueDiv.textContent = `${humidity} %`;
+    valueDiv.textContent = `${humidity}%`;
     humidityStatusDiv.appendChild(valueDiv);
 
     // Create the div for additional notes
