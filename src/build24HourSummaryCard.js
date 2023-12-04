@@ -39,6 +39,8 @@ export default function build24HourSummaryCard(daywiseHourlyForecasts) {
         temperature.classList.add('temperature');
         temperature.textContent = `${hour.currentTemperature}°`;
         hourContainer.appendChild(temperature);
+
+        hourlyForecastContainer.appendChild(hourContainer);
     });
 }
 
