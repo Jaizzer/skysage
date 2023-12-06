@@ -28,13 +28,13 @@ export default function buildNdayForecastDashBoard(daywiseHourlyForecast) {
         // Create the low temperature container
         const lowTemperatureContainer = document.createElement('div');
         lowTemperatureContainer.classList.add('low');
-        lowTemperatureContainer.textContent = `L: ${day[0].lowTemperature}°`;
+        lowTemperatureContainer.textContent = `${day[0].lowTemperature}°`;
         dailyForecastContainer.appendChild(lowTemperatureContainer);
 
         // Create the high temperature container
         const highTemperatureContainer = document.createElement('div');
         highTemperatureContainer.classList.add('high');
-        highTemperatureContainer.textContent = `H: ${day[0].highTemperature}°`;
+        highTemperatureContainer.textContent = `${day[0].highTemperature}°`;
         dailyForecastContainer.appendChild(highTemperatureContainer);
     });
 }
