@@ -71,5 +71,49 @@ body {
 }
 
 .hour-container .weather-icon {
+    justify-self: center;
     scale: 0.75;
+}
+
+.n-day-forecast-container {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+}
+
+.daily-forecast-container:nth-child(1) {
+    grid-row: 1 / 2;
+}
+
+
+.daily-forecast-container:nth-child(2) {
+    grid-row: 2 / 3;
+}
+
+.daily-forecast-container:nth-child(3) {
+    grid-row: 3 / 4;
+}
+
+.daily-forecast-container {
+    display: grid;
+    grid-template-columns: 110px 90px repeat(2, auto);
+    align-content: center;
+    align-items: center;
+}
+
+
+.high-low-temperature-container {
+    display: grid;
+    grid-template-columns: subgrid;
+}
+
+.daily-forecast-container .low {
+    grid-column: 3 / 4;
+}
+
+.daily-forecast-container .high {
+    grid-column: 4 / 5;
+}
+
+.daily-forecast-container img {
+    scale: 0.70;
 }
