@@ -101,7 +101,7 @@ body {
 
 .daily-forecast-container {
     display: grid;
-    grid-template-columns: 110px 90px repeat(2, auto);
+    grid-template-columns: auto 90px 40px 40px;
     align-content: center;
     align-items: center;
 }
