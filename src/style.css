@@ -134,3 +134,7 @@ body {
     text-transform: uppercase;
     font-size: 12px;
 }
+
+.highlight-card .value {
+    font-size: 20px;
+}
