@@ -106,6 +106,9 @@ body {
     align-items: center;
 }
 
+.daily-forecast-container .weather-icon {
+    justify-self: center;
+}
 
 .high-low-temperature-container {
     display: grid;
