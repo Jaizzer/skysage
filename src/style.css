@@ -9,6 +9,9 @@ body {
     width: 100vw;
     height: 100vh;
     padding: 30px;
+
+    display: grid;
+    grid-template-columns: 1 / 3;
 }
 
 .current-hour-info-container {
