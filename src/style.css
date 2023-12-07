@@ -123,3 +123,9 @@ body {
 .daily-forecast-container img {
     scale: 0.75;
 }
+
+.highlight-card {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+}
