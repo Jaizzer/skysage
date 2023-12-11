@@ -32,6 +32,19 @@ body {
     grid-column: 2 / 3;
 }
 
+@media screen and (max-width: 600px) {
+    body {
+        grid-template-columns: 1fr;
+    }
+    
+    .current-hour-info-container,
+    .n-day-forecast-container,
+    .hourly-forecast-container,
+    .todays-highlights-container {
+        grid-column:  1 / 2;
+    }
+}
+
 .current-hour-info-container,
 .hourly-forecast-container,
 .n-day-forecast-container,
