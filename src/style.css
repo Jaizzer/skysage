@@ -156,6 +156,11 @@ body {
     grid-template-columns: subgrid;
 }
 
+.daily-forecast-container .low,
+.daily-forecast-container .high {
+    justify-self: center;
+}
+
 .daily-forecast-container .low {
     grid-column: 3 / 4;
 }
