@@ -124,6 +124,7 @@ body {
 
     border-radius: 5px;
     padding: 10px;
+    height: 200px;
 }
 
 .daily-forecast-container:nth-child(1) {
