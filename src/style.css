@@ -15,10 +15,10 @@ body {
     grid-template-columns: auto 1fr;
     grid-template-rows: repeat(5, auto);
     gap: 10px;
-}
+    }
 
 .current-hour-info-container {
-    grid-column:  1 / 3;
+    grid-column:  1 / -1;
 }
 
 .n-day-forecast-container {
@@ -26,11 +26,11 @@ body {
 }
 
 .hourly-forecast-container {
-    grid-column: 1 / 3;
+    grid-column: 1 / -1;
 }
 
 .todays-highlights-container {
-    grid-column: 2 / 3;
+    grid-column: 2 / -1;
 }
 
 @media screen and (max-width: 480px) {
