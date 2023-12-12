@@ -32,7 +32,7 @@ body {
     grid-column: 2 / 3;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 480px) {
     body {
         grid-template-columns: 1fr;
     }
@@ -140,11 +140,17 @@ body {
 
 .daily-forecast-container {
     display: grid;
-    grid-template-columns: auto 90px 40px 40px;
+    grid-template-columns: 100px 90px 40px 40px;
     align-content: center;
     align-items: center;
 
     gap: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .daily-forecast-container {
+       justify-self: center;
+    }
 }
 
 .daily-forecast-container .weather-icon {
