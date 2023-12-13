@@ -142,7 +142,8 @@ body {
 
 .daily-forecast-container {
     display: grid;
-    grid-template-columns: 100px 90px 40px 40px;
+    grid-template-columns: 100px 64px 40px 40px;
+    justify-content: center;
     align-content: center;
     align-items: center;
 
