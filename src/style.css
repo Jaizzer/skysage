@@ -94,7 +94,10 @@ body {
 .hourly-forecast-container {
     height: 170px;
     border-radius: 5px;
-    padding: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 15px;
+    padding-left: 15px;
 
     display: grid;
     grid-auto-flow: column;
@@ -102,7 +105,7 @@ body {
     width: 100%;
     overflow: auto;
 
-    gap: 10px;
+    gap: 15px;
 }
 
 .hour-container {
