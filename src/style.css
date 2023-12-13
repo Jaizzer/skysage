@@ -149,11 +149,6 @@ body {
     gap: 10px;
 }
 
-@media screen and (max-width: 600px) {
-    .daily-forecast-container {
-       justify-self: center;
-    }
-}
 
 .daily-forecast-container .weather-icon {
     justify-self: center;
