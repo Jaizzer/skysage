@@ -120,9 +120,11 @@ form input:focus {
 
 @media screen and (max-width: 599px) {
     body {
-        grid-template-rows: repeat(5, auto);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, auto);
+        grid-auto-rows: 150px;
     }
-    
+
     #unit-converter {
         grid-column:  1 / -1;
         justify-content: space-between;
@@ -134,9 +136,13 @@ form input:focus {
     .fahrenheit {
         border-radius: var(--border-radius);
     }
+
+    .logo-container {
+        grid-column: 1 / -1;
+    }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 329px) {
     body {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(5, auto);
@@ -145,9 +151,8 @@ form input:focus {
     form,
     .current-hour-info-container,
     .n-day-forecast-container,
-    .hourly-forecast-container,
-    .todays-highlights-container {
-        grid-column:  1 / 2;
+    .hourly-forecast-container {
+        grid-column:  1 / -1;
     }
 }
 
