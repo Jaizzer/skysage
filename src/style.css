@@ -41,7 +41,6 @@ body {
 }
 
 form,
-#unit-converter,
 .current-hour-info-container,
 .hourly-forecast-container,
 .highlight-card,
@@ -80,9 +79,7 @@ form input:focus {
 }
 
 #unit-converter {
-border: 1px solid white;
     grid-column: -2 / -1;
-    border-radius: var(--border-radius);
     display: grid;
     grid-template-columns: repeat(2, 41px);
     justify-content: end;
