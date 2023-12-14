@@ -83,7 +83,7 @@ form input:focus {
     display: grid;
     grid-template-columns: repeat(2, 41px);
     justify-content: end;
-    gap: 5px;
+    gap: 10px;
 }
 
 .fahrenheit,
