@@ -54,15 +54,23 @@ form.addEventListener('submit', (event) => {
 });
 
 // Use switch element to in DOM to switch units from celsisus to fahrenheit vice-versa.
-const unitConverter = document.querySelector('#unit-converter');
-unitConverter.addEventListener('click', () => {
-    if (unitConverter.textContent === 'Use Fahrenheit') {
-        unit = 'f';
+const fahrenheit = document.querySelector('.fahrenheit');
+const celsius = document.querySelector('.celsius');
+
+fahrenheit.addEventListener('click', () => {
+    unit = 'f';
+    if (!fahrenheit.classList.contains('selected-unit')) {
+        fahrenheit.classList.add('selected-unit');
         loadWeatherStatus(location, unit);
-        unitConverter.textContent = 'Use Celsius';
-    } else {
-        unit = 'c';
-        loadWeatherStatus(location, unit);
-        unitConverter.textContent = 'Use Fahrenheit';
     }
+    celsius.classList.remove('selected-unit');
+});
+
+celsius.addEventListener('click', () => {
+    unit = 'c';
+    if (!celsius.classList.contains('selected-unit')) {
+        celsius.classList.add('selected-unit');
+        loadWeatherStatus(location, unit);
+    }
+    fahrenheit.classList.remove('selected-unit');
 });
