@@ -19,6 +19,14 @@
             "classes": true,
             "variables": true,
             "allowNamedExports": false
-        }]
+        }],
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+              "devDependencies": false,
+              "optionalDependencies": false,
+              "peerDependencies": false,
+            }
+        ]
     }
 }
