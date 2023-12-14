@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --border-radius: 15px;
+  }
+
 body {
     margin: 0;
     font-family: "Roboto", sans-serif;
@@ -47,7 +51,7 @@ form input:focus {
 
 #search-bar {
     border: 1px solid white;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     display: grid;
     align-content: center;
     grid-template-columns: auto 1fr;
@@ -96,7 +100,7 @@ form input:focus {
 }
 
 .current-hour-info-container {
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     padding: 30px;
 
     display: grid;
@@ -134,7 +138,7 @@ form input:focus {
 
 .hourly-forecast-container {
     height: 170px;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     padding-top: 30px;
     padding-bottom: 30px;
     padding-right: 15px;
@@ -167,7 +171,7 @@ form input:focus {
     display: grid;
     grid-template-rows: repeat(3, auto);
     
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     padding: 20px;
 }
 
@@ -243,7 +247,7 @@ form input:focus {
 }
 
 .highlight-card {
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     padding: 20px;
     display: grid;
     gap: 10px;
