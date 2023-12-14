@@ -118,9 +118,28 @@ form input:focus {
     grid-column: 2 / -1;
 }
 
+@media screen and (max-width: 599px) {
+    body {
+        grid-template-rows: repeat(5, auto);
+    }
+    
+    #unit-converter {
+        grid-column:  1 / -1;
+        justify-content: space-between;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .celsius,
+    .fahrenheit {
+        border-radius: var(--border-radius);
+    }
+}
+
 @media screen and (max-width: 480px) {
     body {
         grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, auto);
     }
     
     form,
