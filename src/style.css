@@ -16,7 +16,19 @@ body {
     grid-template-rows: repeat(4, auto);
     grid-auto-rows: 230px;
     gap: 15px;
+    background-color: rgb(230, 230, 230);
 }
+
+form,
+#unit-converter,
+.current-hour-info-container,
+.hourly-forecast-container,
+.highlight-card,
+.n-day-forecast-container {
+    background-color: white;
+    border-color: white;
+}
+
 
 form {
     grid-column: 1 / 3;
@@ -34,12 +46,16 @@ form input:focus {
 }
 
 #search-bar {
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 5px;
     display: grid;
     align-content: center;
     grid-template-columns: auto 1fr;
     padding: 7px 10px 7px 10px
+}
+
+#unit-converter {
+    border: 1px solid white
 }
 
 .current-hour-info-container {
