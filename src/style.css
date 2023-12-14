@@ -59,7 +59,8 @@ form input:focus {
 }
 
 #unit-converter {
-    border: 1px solid white
+    border: 1px solid white;
+    grid-column: -2 / -1;
 }
 
 .current-hour-info-container {
