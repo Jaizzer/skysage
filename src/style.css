@@ -23,6 +23,23 @@ body {
     background-color: rgb(230, 230, 230);
 }
 
+.logo-container {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.logo-container img {
+    height: 40px;
+}
+
+.logo-container .logo-text {
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
 form,
 #unit-converter,
 .current-hour-info-container,
