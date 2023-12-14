@@ -61,6 +61,7 @@ form input:focus {
 #unit-converter {
     border: 1px solid white;
     grid-column: -2 / -1;
+    border-radius: var(--border-radius);
 }
 
 .current-hour-info-container {
