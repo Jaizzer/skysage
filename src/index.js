@@ -6,6 +6,7 @@ import buildCurrentHourInfoSection from './buildCurrentHourInfoSection';
 import getCurrentHourWeatherStatus from './getCurrentHourWeatherStatus';
 import buildTodaysHighlights from './buildTodaysHighlights';
 import build24HourSummaryCard from './build24HourSummaryCard';
+import displayError from './displayError';
 
 // Current temperature units.
 let unit = 'c';
@@ -17,23 +18,28 @@ async function loadWeatherStatus(location, tempUnit) {
     // Get Weather data.
     const weatherData = await getWeatherData(location);
 
-    // Process the weather data and extract day-wise hourly forecasts.
-    const daywiseHourlyForecasts = processWeatherData(weatherData, tempUnit);
+    // Show error message if weather data is not found.
+    if (!weatherData) {
+        displayError('Location not found.');
+    } else {
+        // Process the weather data and extract day-wise hourly forecasts.
+        const daywiseHourlyForecasts = processWeatherData(weatherData, tempUnit);
 
-    // Build the n-day-forecast dashboard
-    buildNdayForecastDashBoard(daywiseHourlyForecasts);
+        // Build the n-day-forecast dashboard
+        buildNdayForecastDashBoard(daywiseHourlyForecasts);
 
-    // Build the current hour info secton
-    buildCurrentHourInfoSection(daywiseHourlyForecasts);
+        // Build the current hour info secton
+        buildCurrentHourInfoSection(daywiseHourlyForecasts);
 
-    // Get current hour weather data.
-    const currentHourWeatherStatus = getCurrentHourWeatherStatus(daywiseHourlyForecasts);
+        // Get current hour weather data.
+        const currentHourWeatherStatus = getCurrentHourWeatherStatus(daywiseHourlyForecasts);
 
-    // Build the today's highlights section.
-    buildTodaysHighlights(currentHourWeatherStatus);
+        // Build the today's highlights section.
+        buildTodaysHighlights(currentHourWeatherStatus);
 
-    // BUild 24 hour summary card.
-    build24HourSummaryCard(daywiseHourlyForecasts);
+        // BUild 24 hour summary card.
+        build24HourSummaryCard(daywiseHourlyForecasts);
+    }
 }
 
 // Set the location to 'London' by default.
