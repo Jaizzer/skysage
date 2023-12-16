@@ -22,6 +22,9 @@ async function loadWeatherStatus(location, tempUnit) {
     if (!weatherData) {
         displayError('Location not found.');
     } else {
+        // If the location is valid, set it as the new global location variabl.
+        globalLocationVariable = location;
+
         // Process the weather data and extract day-wise hourly forecasts.
         const daywiseHourlyForecasts = processWeatherData(weatherData, tempUnit);
 
@@ -43,8 +46,8 @@ async function loadWeatherStatus(location, tempUnit) {
 }
 
 // Set the location to 'London' by default.
-let location = 'London';
-loadWeatherStatus(location, unit);
+let globalLocationVariable = 'London';
+loadWeatherStatus(globalLocationVariable, unit);
 
 // Get Weather data when the user searched for a location.
 const form = document.querySelector('form');
@@ -54,9 +57,8 @@ form.addEventListener('submit', (event) => {
 
     // Get the new location from the search bar.s
     const search = form.querySelector('#search-location');
-    location = search.value;
 
-    loadWeatherStatus(location, unit);
+    loadWeatherStatus(search.value, unit);
 });
 
 // Use switch element to in DOM to switch units from celsisus to fahrenheit vice-versa.
@@ -67,7 +69,7 @@ fahrenheit.addEventListener('click', () => {
     unit = 'f';
     if (!fahrenheit.classList.contains('selected-unit')) {
         fahrenheit.classList.add('selected-unit');
-        loadWeatherStatus(location, unit);
+        loadWeatherStatus(globalLocationVariable, unit);
     }
     celsius.classList.remove('selected-unit');
 });
@@ -76,7 +78,7 @@ celsius.addEventListener('click', () => {
     unit = 'c';
     if (!celsius.classList.contains('selected-unit')) {
         celsius.classList.add('selected-unit');
-        loadWeatherStatus(location, unit);
+        loadWeatherStatus(globalLocationVariable, unit);
     }
     fahrenheit.classList.remove('selected-unit');
 });
