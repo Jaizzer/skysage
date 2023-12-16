@@ -329,6 +329,29 @@ form input:focus {
     font-size: 12px;
 }
 
+.sunrise-sunset {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(3, auto);
+    align-items: center;
+    gap: 0px;
+}
+
+.sunrise-sunset .heading-container {
+    grid-column: 1 / 3;
+}
+
+.sunrise-sunset .icon {
+    width: 30px;
+    grid-column: 1 / 2;
+}
+
+.sunrise-time,
+.sunset-time {
+    grid-column: 2 / 3;
+    justify-self: center;
+}
+
 .blurry-background {
     width: 100%;
     height: 100%;
