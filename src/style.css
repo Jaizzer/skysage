@@ -146,7 +146,7 @@ form input:focus {
 @media screen and (max-width: 329px) {
     body {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(5, auto);
+        grid-template-rows: repeat(6, auto);
     }
 
     form,
