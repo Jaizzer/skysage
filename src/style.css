@@ -304,7 +304,7 @@ form input:focus {
     gap: 5px;
 }
 
-.heading-container svg {
+.heading-container .highlight-icon {
     width: 100%;
     height: 100%;
 }
