@@ -1,13 +1,30 @@
+import humidityImgSrc from './img/humidity.png';
+
 export default function buildHumidityStatusCard(humidity) {
     // Create the div element
     const humidityStatusDiv = document.createElement('div');
     humidityStatusDiv.classList.add('highlight-card');
 
-    // Create the div for the humidity title.
+    // Create the heading container.
+    const headingContainer = document.createElement('div');
+    headingContainer.classList.add('heading-container');
+    humidityStatusDiv.appendChild(headingContainer);
+
+    // Create the image element (assuming there's an icon URL you want to insert)
+    const iconContainer = document.createElement('div');
+    iconContainer.classList.add('icon-container');
+    headingContainer.appendChild(iconContainer);
+
+    const icon = document.createElement('img');
+    icon.classList.add('highlight-icon');
+    icon.src = humidityImgSrc;
+    iconContainer.appendChild(icon);
+
+    // Create the div for the UV Index name
     const nameDiv = document.createElement('div');
     nameDiv.classList.add('highlight-name');
     nameDiv.textContent = 'Humidity';
-    humidityStatusDiv.appendChild(nameDiv);
+    headingContainer.appendChild(nameDiv);
 
     // Create the div for the humidity value
     const valueDiv = document.createElement('div');
