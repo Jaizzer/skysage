@@ -32,5 +32,39 @@ export default function buildPressureStatusCard(pressure) {
     valueDiv.textContent = `${pressure} hPa`;
     pressureStatusDiv.appendChild(valueDiv);
 
+    // Create the div for additional notes
+    const notesDiv = document.createElement('div');
+    notesDiv.classList.add('additional-notes');
+    notesDiv.textContent = getPressureMessage(pressure);
+    pressureStatusDiv.appendChild(notesDiv);
+
     return pressureStatusDiv;
+}
+
+function getPressureMessage(pressure) {
+    let pressureMessage;
+    switch (true) {
+        case pressure === 0:
+            pressureMessage = 'No pressure data available.';
+            break;
+        case pressure < 1000:
+            pressureMessage = 'Low pressure detected.';
+            break;
+        case pressure > 1000 && pressure <= 1013:
+            pressureMessage = 'Normal pressure conditions.';
+            break;
+        case pressure > 1013 && pressure <= 1020:
+            pressureMessage = 'Slightly elevated pressure.';
+            break;
+        case pressure > 1020 && pressure <= 1030:
+            pressureMessage = 'Moderately high pressure.';
+            break;
+        case pressure > 1030 && pressure <= 1040:
+            pressureMessage = 'High pressure, stable conditions.';
+            break;
+        case pressure > 1040:
+            pressureMessage = 'Extremely high pressure, unusual conditions.';
+            break;
+    }
+    return pressureMessage;
 }
