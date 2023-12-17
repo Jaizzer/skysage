@@ -314,6 +314,7 @@ form input:focus {
     border-radius: var(--border-radius);
     padding: 20px;
     display: grid;
+    grid-template-rows: auto repeat(2, 1fr);
     gap: 10px;
 }
 
@@ -324,6 +325,7 @@ form input:focus {
 
 .highlight-card .value {
     font-size: 20px;
+    align-self: center;
 }
 
 .additional-notes {
