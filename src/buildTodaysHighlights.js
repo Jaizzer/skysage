@@ -23,6 +23,6 @@ export default function buildTodaysHighlights(currentHourWeatherStatus) {
     todaysHighlights.appendChild(buildHumidityStatusCard(currentHourWeatherStatus.humidity));
     todaysHighlights.appendChild(buildVisibilityCard(currentHourWeatherStatus.visibility));
     todaysHighlights.appendChild(buildPressureStatusCard(currentHourWeatherStatus.pressure));
-    todaysHighlights.appendChild(buildFeelsLikeCard(currentHourWeatherStatus.feelsLike));
+    todaysHighlights.appendChild(buildFeelsLikeCard(currentHourWeatherStatus.feelsLike, currentHourWeatherStatus.unit));
     todaysHighlights.appendChild(buildMoonStatusCard(currentHourWeatherStatus.moonPhase, currentHourWeatherStatus.moonRise));
 }
