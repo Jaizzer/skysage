@@ -43,16 +43,22 @@ export default function buildUvIndexCard(uvValue) {
 
 function getUVMessage(uvValue) {
     let message = '';
-    if (uvValue >= 0 && uvValue <= 2) {
-        message = 'Minimal danger. Up to 1 hour sun, no burning.';
-    } else if (uvValue >= 3 && uvValue <= 5) {
-        message = 'Low risk. Fair skin burns in <20 mins. Use sunscreen, wear protection.';
-    } else if (uvValue >= 6 && uvValue <= 7) {
-        message = 'Moderate risk. Fair skin burns in <20 mins. Use sunscreen, protect sensitive areas.';
-    } else if (uvValue >= 8 && uvValue <= 10) {
-        message = 'High risk. Fair skin burns in <10 mins. Minimize exposure, use sunscreen, wear protection.';
-    } else if (uvValue >= 11) {
-        message = 'Very high risk. Fair skin burns in <5 mins. Minimize exposure, use high SPF sunscreen, wear protection.';
+    switch (true) {
+        case uvValue >= 0 && uvValue <= 2:
+            message = 'Minimal danger. Up to 1 hour sun, no burning.';
+            break;
+        case uvValue >= 3 && uvValue <= 5:
+            message = 'Low risk. Fair skin burns in <20 mins. Use sunscreen, wear protection.';
+            break;
+        case uvValue >= 6 && uvValue <= 7:
+            message = 'Moderate risk. Fair skin burns in <20 mins. Use sunscreen, protect sensitive areas.';
+            break;
+        case uvValue >= 8 && uvValue <= 10:
+            message = 'High risk. Fair skin burns in <10 mins. Minimize exposure, use sunscreen, wear protection.';
+            break;
+        default:
+            message = 'Very high risk. Fair skin burns in <5 mins. Minimize exposure, use high SPF sunscreen, wear protection.';
+            break;
     }
     return message;
 }
