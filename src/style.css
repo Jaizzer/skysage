@@ -328,6 +328,8 @@ form input:focus {
 
 .additional-notes {
     font-size: 12px;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .sunrise-sunset {
