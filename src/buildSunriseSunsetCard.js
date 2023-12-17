@@ -28,29 +28,39 @@ export default function buildSunriseSunsetCard(sunrise, sunset) {
     nameDiv.textContent = 'Sun';
     headingContainer.appendChild(nameDiv);
 
+    // Create div to hold the sunrise items.
+    const sunriseContainer = document.createElement('div');
+    sunriseContainer.classList.add('sunrise-container');
+    sunriseSunsetDiv.appendChild(sunriseContainer);
+
     // Create the image element (assuming there's an icon URL you want to insert)
     const sunriseIconImg = document.createElement('img');
     sunriseIconImg.src = sunriseImgSrc;
     sunriseIconImg.classList.add('icon');
-    sunriseSunsetDiv.appendChild(sunriseIconImg);
+    sunriseContainer.appendChild(sunriseIconImg);
 
     // Create div for the sunrise time.
     const sunriseTime = document.createElement('div');
     sunriseTime.classList.add('sunrise-time');
     sunriseTime.textContent = sunrise;
-    sunriseSunsetDiv.appendChild(sunriseTime);
+    sunriseContainer.appendChild(sunriseTime);
+
+    // Create div to hold the sunset items.
+    const sunsetContainer = document.createElement('div');
+    sunsetContainer.classList.add('sunset-container');
+    sunriseSunsetDiv.appendChild(sunsetContainer);
 
     // Create the image element (assuming there's an icon URL you want to insert)
     const sunsetIconImg = document.createElement('img');
     sunsetIconImg.src = sunsetImgSrc;
     sunsetIconImg.classList.add('icon');
-    sunriseSunsetDiv.appendChild(sunsetIconImg);
+    sunsetContainer.appendChild(sunsetIconImg);
 
     // Create div for the sunrise time.
     const sunsetTime = document.createElement('div');
     sunsetTime.classList.add('sunset-time');
     sunsetTime.textContent = sunset;
-    sunriseSunsetDiv.appendChild(sunsetTime);
+    sunsetContainer.appendChild(sunsetTime);
 
     return sunriseSunsetDiv;
 }
