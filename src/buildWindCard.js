@@ -31,12 +31,6 @@ export default function buildWindStatusCard(currentWindStatus) {
     speedDiv.textContent = `${currentWindStatus.windSpeed} km/h`;
     windStatusDiv.appendChild(speedDiv);
 
-    // Create the div for the Wind Direction value
-    const directionDiv = document.createElement('div');
-    directionDiv.classList.add('value');
-    directionDiv.textContent = `${currentWindStatus.windDirection}`;
-    windStatusDiv.appendChild(directionDiv);
-
     // Create the div for additional notes
     const notesDiv = document.createElement('div');
     notesDiv.classList.add('additional-notes');
