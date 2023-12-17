@@ -337,7 +337,7 @@ form input:focus {
 .sunrise-sunset {
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: auto repeat(2, 1fr);
     align-items: center;
     gap: 0px;
 }
