@@ -29,8 +29,14 @@ export default function buildMoonStatusCard(moonPhase, moonRise) {
     // Create the div for the moon value (Moon rise time).
     const valueDiv = document.createElement('div');
     valueDiv.classList.add('value');
-    valueDiv.textContent = `${moonPhase}, ${moonRise}`;
+    valueDiv.textContent = `${moonPhase}`;
     moonStatusDiv.appendChild(valueDiv);
+
+    // Create the div for additional notes
+    const notesDiv = document.createElement('div');
+    notesDiv.classList.add('additional-notes');
+    notesDiv.textContent = `Moonrise: ${moonRise}`;
+    moonStatusDiv.appendChild(notesDiv);
 
     return moonStatusDiv;
 }
