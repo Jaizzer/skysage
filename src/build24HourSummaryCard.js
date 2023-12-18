@@ -58,13 +58,13 @@ export default function build24HourSummaryCard(daywiseHourlyForecasts) {
             time.textContent = selectedHourInfo.time;
 
             // Add sunrise/sunset icon.
-            icon.classList.add(`${selectedHourInfo.constructor.name.toLowerCase()}-icon`);
+            icon.classList.add(`${selectedHourInfo.type.toLowerCase()}-icon`);
             icon.src = selectedHourInfo.icon;
 
             // Add the text that says whether it is sunrise or sunset.
             const sunriseOrSunset = document.createElement('div');
             sunriseOrSunset.classList.add('sunrise-sunset-classifier');
-            sunriseOrSunset.textContent = `${selectedHourInfo.constructor.name}`;
+            sunriseOrSunset.textContent = `${selectedHourInfo.type}`;
             hourContainer.appendChild(sunriseOrSunset);
         }
         hourlyForecastContainer.appendChild(hourContainer);
@@ -185,6 +185,7 @@ class Sunrise {
     constructor(time) {
         this.icon = sunriseImageSrc;
         this.time = time;
+        this.type = 'Sunrise';
     }
 }
 
@@ -192,5 +193,6 @@ class Sunset {
     constructor(time) {
         this.icon = sunsetImageSrc;
         this.time = time;
+        this.type = 'Sunset';
     }
 }
