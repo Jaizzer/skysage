@@ -1,6 +1,7 @@
 import getCurrentHour from './getCurrentHour';
 import sunriseImageSrc from './img/sunrise.png';
 import sunsetImageSrc from './img/sunset.png';
+import Weather from './Weather.js';
 
 export default function build24HourSummaryCard(daywiseHourlyForecasts) {
     // Access the hourly forecast container.
@@ -15,36 +16,53 @@ export default function build24HourSummaryCard(daywiseHourlyForecasts) {
         const hourContainer = document.createElement('div');
         hourContainer.classList.add('hour-container');
 
-        // Extract the hours and remove '0' pad.
-        const selectedhour = parseInt(selectedHourInfo.date.time.slice(0, 2), 10);
-
         // Create the container to hold the time.
         const time = document.createElement('div');
         time.classList.add('time');
-
-        // Get current date.
-        const currentDate = twentyFourHourSummary[0].date.currentDate;
-
-        // Fill the 'time-container' with values, starting from current-hour 'Now'.
-        if (selectedhour === getCurrentHour() && selectedHourInfo.date.currentDate === currentDate) {
-            time.textContent = 'Now';
-        } else {
-            time.textContent = convertTo12HourFormat(selectedhour);
-        }
         hourContainer.appendChild(time);
 
         // Add the icon for the current weather status for the current hour.
         const icon = document.createElement('img');
-        icon.classList.add('weather-icon');
-        icon.src = selectedHourInfo.currentHourWeatherIcon;
         hourContainer.appendChild(icon);
 
-        // Add the current temperature for the current hour.
-        const temperature = document.createElement('div');
-        temperature.classList.add('temperature');
-        temperature.textContent = `${selectedHourInfo.currentTemperature}°`;
-        hourContainer.appendChild(temperature);
+        // Handle both Weather, Sunrise, and Sunset instances of selected hour info.
+        if (selectedHourInfo instanceof Weather) {
+            // Get current date.
+            const currentDate = twentyFourHourSummary[0].date.currentDate;
 
+            // Extract the hours and remove '0' pad.
+            const selectedhour = parseInt(selectedHourInfo.date.time.slice(0, 2), 10);
+
+            // Fill the 'time-container' with values, starting from current-hour 'Now'.
+            if (selectedhour === getCurrentHour() && selectedHourInfo.date.currentDate === currentDate) {
+                time.textContent = 'Now';
+            } else {
+                time.textContent = convertTo12HourFormat(selectedhour);
+            }
+
+            // Add weather icon.
+            icon.classList.add('weather-icon');
+            icon.src = selectedHourInfo.currentHourWeatherIcon;
+
+            // Add the current temperature for the current hour.
+            const temperature = document.createElement('div');
+            temperature.classList.add('temperature');
+            temperature.textContent = `${selectedHourInfo.currentTemperature}°`;
+            hourContainer.appendChild(temperature);
+        } else if (selectedHourInfo instanceof Sunrise || selectedHourInfo instanceof Sunset) {
+            // Set Sunrise/Sunset time.
+            time.textContent = selectedHourInfo.time;
+
+            // Add sunrise/sunset icon.
+            icon.classList.add(`${selectedHourInfo.constructor.name.toLowerCase()}-icon`);
+            icon.src = selectedHourInfo.icon;
+
+            // Add the text that says whether it is sunrise or sunset.
+            const sunriseOrSunset = document.createElement('div');
+            sunriseOrSunset.classList.add('sunrise-sunset-classifier');
+            sunriseOrSunset.textContent = `${selectedHourInfo.constructor.name}`;
+            hourContainer.appendChild(sunriseOrSunset);
+        }
         hourlyForecastContainer.appendChild(hourContainer);
     });
 }
