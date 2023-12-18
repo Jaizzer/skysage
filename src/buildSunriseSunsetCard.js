@@ -42,7 +42,7 @@ export default function buildSunriseSunsetCard(sunrise, sunset) {
     // Create div for the sunrise time.
     const sunriseTime = document.createElement('div');
     sunriseTime.classList.add('sunrise-time');
-    sunriseTime.textContent = sunrise;
+    sunriseTime.textContent = sunrise.split('')[0] === '0' ? sunrise.slice(1) : sunrise;
     sunriseContainer.appendChild(sunriseTime);
 
     // Create div to hold the sunset items.
@@ -59,7 +59,7 @@ export default function buildSunriseSunsetCard(sunrise, sunset) {
     // Create div for the sunrise time.
     const sunsetTime = document.createElement('div');
     sunsetTime.classList.add('sunset-time');
-    sunsetTime.textContent = sunset;
+    sunsetTime.textContent = sunset.split('')[0] === '0' ? sunset.slice(1) : sunset;
     sunsetContainer.appendChild(sunsetTime);
 
     return sunriseSunsetDiv;
