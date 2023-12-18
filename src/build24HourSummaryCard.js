@@ -55,6 +55,18 @@ function get24HourSummary(daywiseHourlyForecasts) {
     twentyFourHourSummary = twentyFourHourSummary.concat(daywiseHourlyForecasts[0].slice(currentTime.hours));
     twentyFourHourSummary = twentyFourHourSummary.concat(daywiseHourlyForecasts[1].slice(0, currentTime.hours + 1));
 
+    // Get hours and minutes of today's sunrise time.
+    const todaySunriseTime = convertTo24HourFormat(daywiseHourlyForecasts[0][0].sunrise);
+
+    // Get hours and minutes of today's sunset time.
+    const todaySunsetTime = convertTo24HourFormat(daywiseHourlyForecasts[0][0].sunset);
+
+    // Get hours and minutes of tomorrow's sunrise time.
+    const tomorrowSunriseTime = convertTo24HourFormat(daywiseHourlyForecasts[1][0].sunrise);
+
+    // Get hours and minutes of tomorrow's sunset time.
+    const tomorrowSunsetTime = convertTo24HourFormat(daywiseHourlyForecasts[1][0].sunset);
+
     return twentyFourHourSummary;
 }
 
