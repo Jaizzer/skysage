@@ -51,6 +51,10 @@ export default function build24HourSummaryCard(daywiseHourlyForecasts) {
             hourContainer.appendChild(temperature);
         } else if (selectedHourInfo instanceof Sunrise || selectedHourInfo instanceof Sunset) {
             // Set Sunrise/Sunset time.
+            // Remove '0' padding if there is any.
+            if (selectedHourInfo.time.split('')[0] === '0') {
+                selectedHourInfo.time = selectedHourInfo.time.slice(1);
+            }
             time.textContent = selectedHourInfo.time;
 
             // Add sunrise/sunset icon.
