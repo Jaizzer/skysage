@@ -1,4 +1,3 @@
-import getCurrentHour from './getCurrentHour';
 import sunriseImageSrc from './img/sunrise.png';
 import sunsetImageSrc from './img/sunset.png';
 import Weather from './Weather.js';
@@ -34,7 +33,7 @@ export default function build24HourSummaryCard(daywiseHourlyForecasts) {
             const selectedhour = parseInt(selectedHourInfo.date.time.slice(0, 2), 10);
 
             // Fill the 'time-container' with values, starting from current-hour 'Now'.
-            if (selectedhour === getCurrentHour() && selectedHourInfo.date.currentDate === currentDate) {
+            if (selectedhour === new Date().getHours() && selectedHourInfo.date.currentDate === currentDate) {
                 time.textContent = 'Now';
             } else {
                 time.textContent = convertTo12HourFormat(selectedhour);
