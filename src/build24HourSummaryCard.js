@@ -1,4 +1,3 @@
-import getCurrentDate from './getCurrentDateYYYY_MM_DD';
 import getCurrentHour from './getCurrentHour';
 
 export default function build24HourSummaryCard(daywiseHourlyForecasts) {
@@ -21,8 +20,8 @@ export default function build24HourSummaryCard(daywiseHourlyForecasts) {
         const time = document.createElement('div');
         time.classList.add('time');
 
-        // Get current date in 'YYYY-MM-DD' format.
-        const currentDate = getCurrentDate();
+        // Get current date.
+        const currentDate = twentyFourHourSummary[0].date.currentDate;
 
         // Fill the 'time-container' with values, starting from current-hour 'Now'.
         if (selectedhour === getCurrentHour() && selectedHourInfo.date.currentDate === currentDate) {
