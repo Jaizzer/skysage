@@ -1,4 +1,6 @@
 import getCurrentHour from './getCurrentHour';
+import sunriseImageSrc from './img/sunrise.png';
+import sunsetImageSrc from './img/sunset.png';
 
 export default function build24HourSummaryCard(daywiseHourlyForecasts) {
     // Access the hourly forecast container.
@@ -94,4 +96,18 @@ function convertTo24HourFormat(hour) {
         hours: hours,
         minutes: minutes,
     };
+}
+
+class Sunrise {
+    constructor(time) {
+        this.icon = sunriseImageSrc;
+        this.time = time;
+    }
+}
+
+class Sunset {
+    constructor(time) {
+        this.icon = sunsetImageSrc;
+        this.time = time;
+    }
 }
