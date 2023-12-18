@@ -219,7 +219,9 @@ form input:focus {
 }
 
 .hour-container {
+    width: 70px;
     display: grid;
+    grid-template-rows: auto 1fr auto;
     grid-auto-flow: row;
     justify-content: center;
     align-content: center;
@@ -227,9 +229,9 @@ form input:focus {
     align-items: center;
 }
 
-.hour-container .weather-icon {
+.hour-container img {
     justify-self: center;
-    scale: 0.75;
+    width: 48px;
 }
 
 .n-day-forecast-container {
