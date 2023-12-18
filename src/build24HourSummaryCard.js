@@ -48,12 +48,12 @@ export default function build24HourSummaryCard(daywiseHourlyForecasts) {
 }
 
 function get24HourSummary(daywiseHourlyForecasts) {
-    const currentHour = getCurrentHour();
+    const currentTime = { hours: new Date().getHours(), minutes: new Date().getMinutes() };
 
     let twentyFourHourSummary = [];
 
-    twentyFourHourSummary = twentyFourHourSummary.concat(daywiseHourlyForecasts[0].slice(currentHour));
-    twentyFourHourSummary = twentyFourHourSummary.concat(daywiseHourlyForecasts[1].slice(0, currentHour + 1));
+    twentyFourHourSummary = twentyFourHourSummary.concat(daywiseHourlyForecasts[0].slice(currentTime.hours));
+    twentyFourHourSummary = twentyFourHourSummary.concat(daywiseHourlyForecasts[1].slice(0, currentTime.hours + 1));
 
     return twentyFourHourSummary;
 }
