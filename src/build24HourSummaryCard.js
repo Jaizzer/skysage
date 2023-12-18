@@ -69,6 +69,29 @@ function get24HourSummary(daywiseHourlyForecasts) {
     // Get hours and minutes of tomorrow's sunset time.
     const tomorrowSunsetTime = convertTo24HourFormat(daywiseHourlyForecasts[1][0].sunset);
 
+    // If today's sunrise is yet to happen, create an object.
+    if (
+        todaySunriseTime.hours > currentTime.hours ||
+        (todaySunriseTime.hours === currentTime.hours && todaySunriseTime.minutes > currentTime.minutes)
+    ) {
+        // daywiseHourlyForecasts[0][0] was arbitrarily chosen because daywiseHourlyForecasts[0][n] all have the same sunrise time.
+        const todaySunrise = new Sunrise(daywiseHourlyForecasts[0][0].sunrise);
+    } else {
+        // Create tomorrow's sunrise if today's sunrise has already happened.
+        // daywiseHourlyForecasts[1][0] was arbitrarily chosen because daywiseHourlyForecasts[1][n] all have the same sunrise time.
+        const tomorrowSunrise = new Sunrise(daywiseHourlyForecasts[1][0].sunrise);
+    }
+
+    // If today's sunset is yet to happen, create an object.
+    if (todaySunsetTime.hours > currentTime.hours || (todaySunsetTime.hours === currentTime.hours && todaySunsetTime.minutes > currentTime.minutes)) {
+        // daywiseHourlyForecasts[0][0] was arbitrarily chosen because daywiseHourlyForecasts[0][n] all have the same sunset time.
+        const todaySunset = new Sunset(daywiseHourlyForecasts[0][0].sunset);
+    } else {
+        // Create tomorrow's sunset if today's sunset has already happened.
+        // daywiseHourlyForecasts[1][0] was arbitrarily chosen because daywiseHourlyForecasts[1][n] all have the same sunset time.
+        const tomorrowSunset = new Sunset(daywiseHourlyForecasts[1][0].sunset);
+    }
+
     return twentyFourHourSummary;
 }
 
