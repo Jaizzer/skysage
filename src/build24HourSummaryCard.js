@@ -4,6 +4,11 @@ import Weather from './Weather.js';
 import get24HourSummary from './get24HourSummary.js';
 import { convertTo12HourFormat } from './formatTime.js';
 
+/**
+ * Builds and updates the 24-hour summary card with hourly forecast information.
+ *
+ * @param {Array} daywiseHourlyForecasts - An array containing hourly forecast information for each day.
+ */
 export default function build24HourSummaryCard(daywiseHourlyForecasts) {
     // Access the hourly forecast container.
     const hourlyForecastContainer = document.querySelector('.hourly-forecast-container');
@@ -34,7 +39,7 @@ export default function build24HourSummaryCard(daywiseHourlyForecasts) {
             // Extract the hours and remove '0' pad.
             const selectedhour = parseInt(selectedHourInfo.date.time.slice(0, 2), 10);
 
-            // Fill the 'time-container' with values, starting from current-hour 'Now'.
+            // Fill the 'time-container' with values, starting from the current-hour 'Now'.
             if (selectedhour === new Date().getHours() && selectedHourInfo.date.currentDate === currentDate) {
                 time.textContent = 'Now';
             } else {
