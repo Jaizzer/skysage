@@ -1,44 +1,10 @@
+import buildHighlightCard from './buildHighlightCard';
 import uvIconSrc from './img/uv.svg';
 
 export default function buildUvIndexCard(uvValue) {
-    // Create the div element
-    const uvIndexDiv = document.createElement('div');
-    uvIndexDiv.classList.add('highlight-card');
-
-    // Create the heading container.
-    const headingContainer = document.createElement('div');
-    headingContainer.classList.add('heading-container');
-    uvIndexDiv.appendChild(headingContainer);
-
-    // Create the image element (assuming there's an icon URL you want to insert)
-    const iconContainer = document.createElement('div');
-    iconContainer.classList.add('icon-container');
-    headingContainer.appendChild(iconContainer);
-
-    const icon = document.createElement('img');
-    icon.classList.add('highlight-icon');
-    icon.src = uvIconSrc;
-    iconContainer.appendChild(icon);
-
-    // Create the div for the UV Index name
-    const nameDiv = document.createElement('div');
-    nameDiv.classList.add('highlight-name');
-    nameDiv.textContent = 'UV Index';
-    headingContainer.appendChild(nameDiv);
-
-    // Create the div for the UV Index value
-    const valueDiv = document.createElement('div');
-    valueDiv.classList.add('value');
-    valueDiv.textContent = uvValue;
-    uvIndexDiv.appendChild(valueDiv);
-
-    // Create the div for additional notes
-    const notesDiv = document.createElement('div');
-    notesDiv.classList.add('additional-notes');
-    notesDiv.textContent = getUVMessage(uvValue); // Use the UV message as additional notes
-    uvIndexDiv.appendChild(notesDiv);
-
-    return uvIndexDiv;
+    // Create highlight card.
+    const uvIndexCard = buildHighlightCard('UV Index', uvIconSrc, uvValue, getUVMessage(uvValue));
+    return uvIndexCard;
 }
 
 function getUVMessage(uvValue) {
