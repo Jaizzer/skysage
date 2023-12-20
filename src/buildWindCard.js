@@ -1,6 +1,19 @@
 import buildHighlightCard from './buildHighlightCard';
 import windIconSrc from './img/wind.svg';
 
+/**
+ * Builds a wind status card using the buildHighlightCard function.
+ *
+ * @param {Object} currentWindStatus - Object containing current wind status information.
+ * @param {number} currentWindStatus.windSpeed - The current wind speed value in kilometers per hour.
+ * @returns {HTMLElement} The generated wind status card element.
+ *
+ * This function utilizes the buildHighlightCard function to create a wind status card.
+ * The card includes a title ('Wind'), an icon representing wind, the current wind speed value,
+ * and a message generated based on the wind speed using the Beaufort scale.
+ *
+ * The generated wind status card can be appended to the DOM to visually represent the current wind conditions.
+ */
 export default function buildWindStatusCard(currentWindStatus) {
     // Create the wind status card.
     const windStatusCard = buildHighlightCard(
@@ -12,8 +25,16 @@ export default function buildWindStatusCard(currentWindStatus) {
     return windStatusCard;
 }
 
-// Example function to get wind message based on wind speed
-// Utility function to get wind message based on wind speed using Beaufort scale
+/**
+ * Generates a description based on the Beaufort scale for wind speed.
+ *
+ * @param {number} windSpeed - The current wind speed value in kilometers per hour.
+ * @returns {string} A descriptive message indicating the wind conditions based on the Beaufort scale.
+ *
+ * This function takes the current wind speed as input and categorizes it into different ranges
+ * using the Beaufort scale. It then returns a descriptive message based on the wind speed category,
+ * such as 'Calm conditions,' 'Light air,' 'Gentle breeze,' 'Moderate wind,' 'Fresh breeze,' 'Strong wind,' and so on.
+ */
 function getWindMessage(windSpeed) {
     let message = '';
     switch (true) {
