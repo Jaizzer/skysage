@@ -4,7 +4,7 @@ import Sunset from './Sunset';
 import { convertTo24HourFormat } from './formatTime';
 
 export default function get24HourSummary(daywiseHourlyForecasts) {
-    const currentTime = convertTo24HourFormat(daywiseHourlyForecasts[0][0].date.currentTime);
+    const currentTime = convertTo24HourFormat(daywiseHourlyForecasts[0][0].date.timeToday);
 
     let twentyFourHourSummary = [];
 
@@ -34,7 +34,7 @@ export default function get24HourSummary(daywiseHourlyForecasts) {
         // Get the index of the hour-forecast that has the same hour with today's sunrise hour.
         const index = twentyFourHourSummary.findIndex((element) => {
             if (element instanceof Weather) {
-                return parseInt(element.date.time.split(':')[0]) === todaySunriseTime.hours;
+                return parseInt(element.date.dayOfInterestTime.split(':')[0]) === todaySunriseTime.hours;
             }
         });
         twentyFourHourSummary.splice(index + 1, 0, todaySunrise);
@@ -47,8 +47,8 @@ export default function get24HourSummary(daywiseHourlyForecasts) {
         const index = twentyFourHourSummary.findIndex((element) => {
             if (element instanceof Weather) {
                 return (
-                    parseInt(element.date.time.split(':')[0]) === tomorrowSunriseTime.hours &&
-                    element.currentDate !== twentyFourHourSummary[0].date.currentDate
+                    parseInt(element.date.dayOfInterestTime.split(':')[0]) === tomorrowSunriseTime.hours &&
+                    element.date.dayOfInterestDate !== element.date.dateToday
                 );
             }
         });
@@ -63,7 +63,7 @@ export default function get24HourSummary(daywiseHourlyForecasts) {
         // Get the index of the hour-forecast that has the same hour with today's Sunset hour.
         const index = twentyFourHourSummary.findIndex((element) => {
             if (element instanceof Weather) {
-                return parseInt(element.date.time.split(':')[0]) === todaySunsetTime.hours;
+                return parseInt(element.date.dayOfInterestTime.split(':')[0]) === todaySunsetTime.hours;
             }
         });
         twentyFourHourSummary.splice(index + 1, 0, todaySunset);
@@ -76,8 +76,8 @@ export default function get24HourSummary(daywiseHourlyForecasts) {
         const index = twentyFourHourSummary.findIndex((element) => {
             if (element instanceof Weather) {
                 return (
-                    parseInt(element.date.time.split(':')[0]) === tomorrowSunsetTime.hours &&
-                    element.currentDate !== twentyFourHourSummary[0].date.currentDate
+                    parseInt(element.date.dayOfInterestTime.split(':')[0]) === tomorrowSunsetTime.hours &&
+                    element.date.dayOfInterestDate !== element.date.dateToday
                 );
             }
         });

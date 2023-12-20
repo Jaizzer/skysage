@@ -34,15 +34,15 @@ export default function build24HourSummaryCard(daywiseHourlyForecasts) {
         // Handle both Weather, Sunrise, and Sunset instances of selected hour info.
         if (selectedHourInfo instanceof Weather) {
             // Get current date.
-            const currentDate = twentyFourHourSummary[0].date.currentDate;
+            const currentDate = twentyFourHourSummary[0].date.dateToday;
             // Get current time
-            const currentTime = convertTo24HourFormat(twentyFourHourSummary[0].date.currentTime);
+            const currentTime = convertTo24HourFormat(twentyFourHourSummary[0].date.timeToday);
 
             // Extract the hours and remove '0' pad.
-            const selectedhour = parseInt(selectedHourInfo.date.time.slice(0, 2), 10);
+            const selectedhour = parseInt(selectedHourInfo.date.dayOfInterestTime.slice(0, 2), 10);
 
             // Fill the 'time-container' with values, starting from the current-hour 'Now'.
-            if (selectedhour === currentTime.hours && selectedHourInfo.date.currentDate === currentDate) {
+            if (selectedhour === currentTime.hours && selectedHourInfo.date.dayOfInterestDate === currentDate) {
                 time.textContent = 'Now';
             } else {
                 time.textContent = convertTo12HourFormat(selectedhour);
