@@ -20,10 +20,10 @@ export default function processWeatherData(weatherData, tempUnit) {
             return new Weather(
                 forecastLocation.name,
                 {
-                    currentDate: forecastLocation.localtime.split(' ')[0],
-                    currentTime: forecastLocation.localtime.split(' ')[1],
-                    date: day.date,
-                    time: hour.time.split(' ')[1],
+                    dateToday: forecastLocation.localtime.split(' ')[0],
+                    timeToday: forecastLocation.localtime.split(' ')[1],
+                    dayOfInterestDate: day.date,
+                    dayOfInterestTime: hour.time.split(' ')[1],
                 },
                 tempUnit,
                 day.day[`maxtemp_${tempUnit}`],
