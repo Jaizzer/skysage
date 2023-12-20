@@ -15,10 +15,8 @@ export default async function getWeatherData(location, numOfDaysToForecast) {
 
         const json = await response.json();
         const extractedInfo = { forecastLocation: json.location, nDayForecast: json.forecast.forecastday };
-        console.log(extractedInfo);
         return extractedInfo;
     } catch (error) {
-        console.log(error);
         return null;
     }
 }
