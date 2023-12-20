@@ -19,7 +19,11 @@ export default function processWeatherData(weatherData, tempUnit) {
         return day.hour.map((hour) => {
             return new Weather(
                 forecastLocation.name,
-                { forecastDate: forecastLocation.localtime, currentDate: day.date, time: hour.time.split(' ')[1] },
+                {
+                    currentTime: forecastLocation.localtime.split(' ')[1],
+                    currentDate: day.date,
+                    time: hour.time.split(' ')[1],
+                },
                 tempUnit,
                 day.day[`maxtemp_${tempUnit}`],
                 day.day[`mintemp_${tempUnit}`],
@@ -43,6 +47,7 @@ export default function processWeatherData(weatherData, tempUnit) {
             );
         });
     });
+    console.log(daywiseHourlyForecasts);
 
     // Return the array of day-wise hourly forecasts.
     return daywiseHourlyForecasts;
