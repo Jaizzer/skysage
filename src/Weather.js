@@ -1,25 +1,61 @@
 /**
- * Represents weather information for a specific location at a particular moment.
+ * Weather class representing weather conditions.
  *
  * @class Weather
- * @param {string} location - The name of the location.
- * @param {number} highTemperature - The high temperature for the day (in degrees Celsius).
- * @param {number} lowTemperature - The low temperature for the day (in degrees Celsius).
- * @param {string} generalWeatherStatus - The general weather condition for the day.
- * @param {number} currentTemperature - The current temperature (in degrees Celsius).
- * @param {string} currentHourWeatherStatus - The weather condition for the current hour.
+ * @param {string} location - The location for which the weather information is provided.
+ * @param {object} date - Object containing date-related information.
+ * @param {string} unit - The temperature unit used (e.g., 'C' or 'F').
+ * @param {number} highTemperature - The high temperature for the day.
+ * @param {number} lowTemperature - The low temperature for the day.
+ * @param {string} generalWeatherStatus - The general weather status for the day.
+ * @param {string} generalWeatherIcon - The icon representing the general weather status.
+ * @param {number} currentTemperature - The current temperature.
+ * @param {string} currentHourWeatherStatus - The weather status for the current hour.
+ * @param {string} currentHourWeatherIcon - The icon representing the weather status for the current hour.
  * @param {number} uvIndex - The UV index.
  * @param {string} sunset - The time of sunset.
  * @param {string} sunrise - The time of sunrise.
- * @param {number} wind - The wind speed (in miles per hour).
- * @param {number} precipitation - The amount of precipitation (in millimeters).
- * @param {number} feelsLike - The "feels like" temperature (in degrees Celsius).
+ * @param {string} moonPhase - The phase of the moon.
+ * @param {string} moonRise - The time of moonrise.
+ * @param {object} wind - Object containing wind-related information.
+ * @param {number} precipitation - The amount of precipitation.
+ * @param {number} feelsLike - The "feels like" temperature.
  * @param {number} humidity - The humidity percentage.
- * @param {number} visibility - The visibility distance (in kilometers).
- * @param {number} pressure - The atmospheric pressure (in millibars).
- * @param {number} averages - The average temperature for the day (in degrees Celsius).
+ * @param {number} visibility - The visibility in kilometers.
+ * @param {number} pressure - The atmospheric pressure.
+ * @param {object} averages - Object containing average temperature information.
+ *
+ * This class is used to create Weather objects, each representing the weather conditions for a specific date and time.
+ * The Weather objects can be utilized to enhance the presentation of weather information in the application.
  */
+
 export default class Weather {
+    /**
+     * Creates an instance of Weather.
+     *
+     * @param {string} location - The location for which the weather information is provided.
+     * @param {object} date - Object containing date-related information.
+     * @param {string} unit - The temperature unit used (e.g., 'C' or 'F').
+     * @param {number} highTemperature - The high temperature for the day.
+     * @param {number} lowTemperature - The low temperature for the day.
+     * @param {string} generalWeatherStatus - The general weather status for the day.
+     * @param {string} generalWeatherIcon - The icon representing the general weather status.
+     * @param {number} currentTemperature - The current temperature.
+     * @param {string} currentHourWeatherStatus - The weather status for the current hour.
+     * @param {string} currentHourWeatherIcon - The icon representing the weather status for the current hour.
+     * @param {number} uvIndex - The UV index.
+     * @param {string} sunset - The time of sunset.
+     * @param {string} sunrise - The time of sunrise.
+     * @param {string} moonPhase - The phase of the moon.
+     * @param {string} moonRise - The time of moonrise.
+     * @param {object} wind - Object containing wind-related information.
+     * @param {number} precipitation - The amount of precipitation.
+     * @param {number} feelsLike - The "feels like" temperature.
+     * @param {number} humidity - The humidity percentage.
+     * @param {number} visibility - The visibility in kilometers.
+     * @param {number} pressure - The atmospheric pressure.
+     * @param {object} averages - Object containing average temperature information.
+     */
     constructor(
         location,
         date,
