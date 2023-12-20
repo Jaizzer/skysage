@@ -1,9 +1,12 @@
-export default async function getWeatherData(location) {
+export default async function getWeatherData(location, numOfDaysToForecast) {
     // Fetch wheather data.
     try {
-        const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=0f21e3cdb5ce4371bf4215345230411&q=${location}&days=10`, {
-            mode: 'cors',
-        });
+        const response = await fetch(
+            `https://api.weatherapi.com/v1/forecast.json?key=0f21e3cdb5ce4371bf4215345230411&q=${location}&days=${numOfDaysToForecast}`,
+            {
+                mode: 'cors',
+            }
+        );
 
         // Throw error if location is not found
         if (response.status !== 200) {

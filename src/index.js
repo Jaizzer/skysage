@@ -16,7 +16,7 @@ async function loadWeatherStatus(location, tempUnit) {
     console.clear();
 
     // Get Weather data.
-    const weatherData = await getWeatherData(location);
+    const weatherData = await getWeatherData(location, 3);
 
     // Show error message if weather data is not found.
     if (!weatherData) {
