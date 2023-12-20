@@ -1,13 +1,35 @@
 import buildHighlightCard from './buildHighlightCard';
 import precipitationImgSrc from './img/precipitation.png';
 
-export default function buildPreciptationStatusCard(precipitation) {
-    // Create highlight card.
+/**
+ * Builds a precipitation status card using the buildHighlightCard function.
+ *
+ * @param {number} precipitation - The current precipitation value to be displayed on the card.
+ * @returns {HTMLElement} The generated precipitation status card element.
+ *
+ * This function utilizes the buildHighlightCard function to create a precipitation status card.
+ * The card includes a title ('Precipitation'), an icon representing precipitation, the current precipitation value,
+ * and a description generated based on the precipitation range.
+ *
+ * The generated precipitation status card can be appended to the DOM to visually represent the current precipitation status.
+ */
+export default function buildPrecipitationStatusCard(precipitation) {
+    // Create the highlight card.
     const precipitationStatusCard = buildHighlightCard('Precipitation', precipitationImgSrc, precipitation, getPrecipitationMessage(precipitation));
     return precipitationStatusCard;
 }
 
-// Return a correponding message base on the precipitation data.
+/**
+ * Generates a description based on the range of precipitation value.
+ *
+ * @param {number} precipitation - The current precipitation value.
+ * @returns {string} A descriptive message indicating the precipitation conditions.
+ *
+ * This function takes the current precipitation value as input and categorizes it into different ranges.
+ * It then returns a descriptive message based on the category, such as 'No rainfall,' 'Light rain, carry an umbrella,'
+ * 'Moderate rain, expect wet conditions,' 'Heavy rain, caution in travel,' 'Very heavy rain, potential flooding,'
+ * 'Intense rain, high flood risk,' or 'Extreme rain, major flooding possible.'
+ */
 function getPrecipitationMessage(precipitation) {
     let precipitationMessage;
     switch (true) {
