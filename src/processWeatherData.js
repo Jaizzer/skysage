@@ -9,6 +9,7 @@
  * It processes the data and creates a structured array of day-wise hourly forecasts, where each day's forecast consists of an array of Weather objects.
  * Each Weather object represents the hourly forecast for a specific date and time, containing relevant weather information such as temperature, conditions, wind, and more.
  */
+import Weather from './Weather';
 export default function processWeatherData(weatherData, tempUnit) {
     // Destructure relevant data from the weatherData object.
     const { forecastLocation, nDayForecast } = weatherData;
