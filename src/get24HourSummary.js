@@ -4,7 +4,7 @@ import Sunset from './Sunset';
 import { convertTo24HourFormat } from './formatTime';
 
 export default function get24HourSummary(daywiseHourlyForecasts) {
-    const currentTime = { hours: new Date().getHours(), minutes: new Date().getMinutes() };
+    const currentTime = convertTo24HourFormat(daywiseHourlyForecasts[0][0].date.currentTime);
 
     let twentyFourHourSummary = [];
 

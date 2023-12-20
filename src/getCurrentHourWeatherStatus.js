@@ -6,10 +6,10 @@
  */
 export default function getCurrentHourWeatherStatus(daywiseHourlyForecast) {
     // Get the current forecast time.
-    const currentForecastDate = daywiseHourlyForecast[0][0].date.forecastDate;
+    const currentTime = daywiseHourlyForecast[0][0].date.currentTime;
 
     // Extract the hour from the current forecast date.
-    const forecastHour = currentForecastDate.split(' ')[1].split(':')[0];
+    const forecastHour = currentTime.split(':')[0];
 
     // Return the weather status for the current hour.
     return daywiseHourlyForecast[0][forecastHour];
