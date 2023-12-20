@@ -48,7 +48,6 @@ export default function processWeatherData(weatherData, tempUnit) {
             );
         });
     });
-    console.log(daywiseHourlyForecasts);
 
     // Return the array of day-wise hourly forecasts.
     return daywiseHourlyForecasts;
