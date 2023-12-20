@@ -20,8 +20,9 @@ export default function processWeatherData(weatherData, tempUnit) {
             return new Weather(
                 forecastLocation.name,
                 {
+                    currentDate: forecastLocation.localtime.split(' ')[0],
                     currentTime: forecastLocation.localtime.split(' ')[1],
-                    currentDate: day.date,
+                    date: day.date,
                     time: hour.time.split(' ')[1],
                 },
                 tempUnit,
