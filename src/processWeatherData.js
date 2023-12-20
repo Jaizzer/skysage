@@ -1,13 +1,13 @@
-// Import the Weather class from the Weather module.
-import Weather from './Weather';
-
 /**
- * Processes the raw weather data obtained from the WeatherAPI and extracts day-wise hourly forecasts.
+ * Processes weather data received from the WeatherAPI and creates an array of day-wise hourly forecasts.
  *
- * @param {Object} weatherData - The raw weather data obtained from the WeatherAPI.
- * @param {string} tempUnit - The temperature unit ('c' for Celsius, 'f' for Fahrenheit).
- * @returns {Array} An array containing day-wise hourly forecasts represented by Weather objects.
- * @throws Will throw an error if the structure of the WeatherAPI response is not as expected.
+ * @param {Object} weatherData - The weather data object received from the WeatherAPI.
+ * @param {string} tempUnit - The temperature unit for the forecasts (e.g., 'C' for Celsius, 'F' for Fahrenheit).
+ * @returns {Array<Array<Weather>>} An array of day-wise hourly forecasts, where each day contains an array of Weather objects representing hourly forecasts.
+ *
+ * This function takes the raw weather data received from the WeatherAPI, including forecast location information and daily forecasts.
+ * It processes the data and creates a structured array of day-wise hourly forecasts, where each day's forecast consists of an array of Weather objects.
+ * Each Weather object represents the hourly forecast for a specific date and time, containing relevant weather information such as temperature, conditions, wind, and more.
  */
 export default function processWeatherData(weatherData, tempUnit) {
     // Destructure relevant data from the weatherData object.
