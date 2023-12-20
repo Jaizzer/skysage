@@ -10,9 +10,9 @@ export default function buildHumidityStatusCard(humidity) {
 // Generate a description base on what range the current humidity falls on.
 function getHumidityMessage(humidity) {
     let message = '';
-    if (humidity >= 0 || humidity <= 30) {
+    if (humidity >= 0 && humidity <= 30) {
         message = 'Dry, Arid';
-    } else if (humidity > 30 || humidity <= 60) {
+    } else if (humidity > 30 && humidity <= 60) {
         message = 'Comfortable';
     } else {
         message = 'Humid, Muggy';
