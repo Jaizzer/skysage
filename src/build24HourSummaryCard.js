@@ -2,7 +2,7 @@ import Sunrise from './Sunrise.js';
 import Sunset from './Sunset.js';
 import Weather from './Weather.js';
 import get24HourSummary from './get24HourSummary.js';
-import { convertTo12HourFormat } from './formatTime.js';
+import { convertTo12HourFormat, convertTo24HourFormat } from './formatTime.js';
 
 /**
  * Builds and updates the 24-hour summary card with hourly forecast information.
@@ -35,12 +35,14 @@ export default function build24HourSummaryCard(daywiseHourlyForecasts) {
         if (selectedHourInfo instanceof Weather) {
             // Get current date.
             const currentDate = twentyFourHourSummary[0].date.currentDate;
+            // Get current time
+            const currentTime = convertTo24HourFormat(twentyFourHourSummary[0].date.currentTime);
 
             // Extract the hours and remove '0' pad.
             const selectedhour = parseInt(selectedHourInfo.date.time.slice(0, 2), 10);
 
             // Fill the 'time-container' with values, starting from the current-hour 'Now'.
-            if (selectedhour === new Date().getHours() && selectedHourInfo.date.currentDate === currentDate) {
+            if (selectedhour === currentTime.hours && selectedHourInfo.date.currentDate === currentDate) {
                 time.textContent = 'Now';
             } else {
                 time.textContent = convertTo12HourFormat(selectedhour);
