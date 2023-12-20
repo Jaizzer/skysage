@@ -8,10 +8,10 @@ export default function getDayName(dateObject) {
     let dayName = '';
 
     // Create a Date object for the forecast date
-    const forecastDate = new Date(dateObject.forecastDate);
+    const forecastDate = new Date(dateObject.currentDate);
 
     // Create a Date object for the current date
-    const currentDate = new Date(dateObject.currentDate);
+    const currentDate = new Date(dateObject.date);
 
     // Compare year, month, and day of the forecast date and current date
     const isSameDate =
