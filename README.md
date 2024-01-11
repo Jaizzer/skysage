@@ -34,9 +34,9 @@ The application includes functions to build different types of weather cards and
 
 To use the application, follow these steps:
 
-1. Install the necessary dependencies: [insert dependencies here].
-2. Include the required modules in your HTML file.
-3. Use the provided functions to fetch weather data, process it, and display the information.
+1. Clone the repository by typing `git clone https://github.com/Jaizzer/skysage.git` in the terminal.
+2. Go to the directory of the clone repository and install the necessary dependencies by typing `npm install in the terminal.
+3. Start the application by typing `npm start` in the directory.
 
 ## Live Site
 
